@@ -825,6 +825,7 @@ public class FileManagerCommandsProcessor : IFileManagerCommandsProcessor
             };
         }
 
+        var basePath = _httpContextAccessor.HttpContext?.Request.PathBase.Value?.TrimEnd('/') ?? "";
         switch (Path.GetExtension(physicalPath).ToLower().Trim())
         {
             case ".png" or ".jpg" or ".webp" or ".gif" or ".svg" or ".jpeg" or ".apng" or ".avif" or ".ico" or ".bmp" or ".tif" or ".tiff":
@@ -834,31 +835,31 @@ public class FileManagerCommandsProcessor : IFileManagerCommandsProcessor
                     EnableRangeProcessing = true
                 };
             case ".zip" or ".rar" or ".tar" or ".7z" or ".gzip" or ".7zip":
-                return new RedirectResult("/hgofilemanager/images/zip.png") { Permanent = true };
+                return new RedirectResult(basePath + "/hgofilemanager/images/zip.png") { Permanent = true };
             case ".js" or ".jsx":
-                return new RedirectResult("/hgofilemanager/images/js.png") { Permanent = true };
+                return new RedirectResult(basePath + "/hgofilemanager/images/js.png") { Permanent = true };
             case ".php":
-                return new RedirectResult("/hgofilemanager/images/php.png") { Permanent = true };
+                return new RedirectResult(basePath + "/hgofilemanager/images/php.png") { Permanent = true };
             case ".html" or ".htm" or ".cshtml":
-                return new RedirectResult("/hgofilemanager/images/html.png") { Permanent = true };
+                return new RedirectResult(basePath + "/hgofilemanager/images/html.png") { Permanent = true };
             case ".css":
-                return new RedirectResult("/hgofilemanager/images/css.png") { Permanent = true };
+                return new RedirectResult(basePath + "/hgofilemanager/images/css.png") { Permanent = true };
             case ".json":
-                return new RedirectResult("/hgofilemanager/images/json.png") { Permanent = true };
+                return new RedirectResult(basePath + "/hgofilemanager/images/json.png") { Permanent = true };
             case ".txt":
-                return new RedirectResult("/hgofilemanager/images/txt.png") { Permanent = true };
+                return new RedirectResult(basePath + "/hgofilemanager/images/txt.png") { Permanent = true };
             case ".pdf":
-                return new RedirectResult("/hgofilemanager/images/pdf.png") { Permanent = true };
+                return new RedirectResult(basePath + "/hgofilemanager/images/pdf.png") { Permanent = true };
             case ".mp4":
-                return new RedirectResult("/hgofilemanager/images/mp4.png") { Permanent = true };
+                return new RedirectResult(basePath + "/hgofilemanager/images/mp4.png") { Permanent = true };
             case ".mp3":
-                return new RedirectResult("/hgofilemanager/images/mp3.png") { Permanent = true };
+                return new RedirectResult(basePath + "/hgofilemanager/images/mp3.png") { Permanent = true };
             case ".exe":
-                return new RedirectResult("/hgofilemanager/images/exe.png") { Permanent = true };
+                return new RedirectResult(basePath + "/hgofilemanager/images/exe.png") { Permanent = true };
             case ".dll":
-                return new RedirectResult("/hgofilemanager/images/dll.png") { Permanent = true };
+                return new RedirectResult(basePath + "/hgofilemanager/images/dll.png") { Permanent = true };
             default:
-                return new RedirectResult("/hgofilemanager/images/file.png") { Permanent = true };
+                return new RedirectResult(basePath + "/hgofilemanager/images/file.png") { Permanent = true };
         }
     }
 }

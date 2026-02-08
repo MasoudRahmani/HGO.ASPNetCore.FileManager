@@ -73,9 +73,9 @@
             this.addButtonToMenu();
         }
 
-        if (!disabledFunctions.includes('copy')) 
+        if (!disabledFunctions.includes('copy'))
             this.addButtonToMenu('<i class="fa-solid fa-copy"></i>', (e) => this.copyItems()).setAttribute('title', 'Copy');
-        if (!disabledFunctions.includes('cut')) 
+        if (!disabledFunctions.includes('cut'))
             this.addButtonToMenu('<i class="fa-solid fa-scissors"></i>', (e) => this.cutItems()).setAttribute('title', 'Cut');
         if (!(disabledFunctions.includes('copy') && disabledFunctions.includes('cut'))) {
             this.pasteButton = this.addButtonToMenu('<i class="fa-solid fa-paste"></i>', (e) => this.pasteItems());
@@ -85,45 +85,45 @@
             this.addButtonToMenu();
         }
 
-        if (!disabledFunctions.includes('rename')) 
+        if (!disabledFunctions.includes('rename'))
             this.addButtonToMenu('<i class="fa-solid fa-i-cursor"></i>', (e) => this.renameSelectedItems()).setAttribute('title', 'Rename');
-        if (!disabledFunctions.includes('getfilecontent')) 
+        if (!disabledFunctions.includes('getfilecontent'))
             this.addButtonToMenu('<i class="fa-solid fa-file-pen"></i>', (e) => this.getFileContent()).setAttribute('title', 'Edit');
-        if (!disabledFunctions.includes('delete')) 
+        if (!disabledFunctions.includes('delete'))
             this.addButtonToMenu('<i class="fa-solid fa-trash"></i>', (e) => this.deleteSelectedItems()).setAttribute('title', 'Delete');
-        if (!(disabledFunctions.includes('rename') && disabledFunctions.includes('getfilecontent') && disabledFunctions.includes('delete'))) 
+        if (!(disabledFunctions.includes('rename') && disabledFunctions.includes('getfilecontent') && disabledFunctions.includes('delete')))
             this.addButtonToMenu();
 
         if (!disabledFunctions.includes('createnewfolder'))
             this.addButtonToMenu('<i class="fa-solid fa-folder-plus"></i>', (e) => this.createNewFolder()).setAttribute('title', 'New Folder');
         if (!disabledFunctions.includes('createnewfile'))
             this.addButtonToMenu('<i class="fa-solid fa-file-circle-plus"></i>', (e) => this.createNewFile()).setAttribute('title', 'New File');
-        if (!(disabledFunctions.includes('createnewfolder') && disabledFunctions.includes('createnewfile'))) 
+        if (!(disabledFunctions.includes('createnewfolder') && disabledFunctions.includes('createnewfile')))
             this.addButtonToMenu();
 
         if (!disabledFunctions.includes('view'))
             this.addButtonToMenu('<i class="fa-solid fa-eye"></i>', (e) => this.viewFile()).setAttribute('title', 'View');
-        if (!disabledFunctions.includes('download')) 
+        if (!disabledFunctions.includes('download'))
             this.addButtonToMenu('<i class="fa-solid fa-cloud-arrow-down"></i>', (e) => this.downloadFile()).setAttribute('title', 'Download');
-        if (!disabledFunctions.includes('upload')) 
+        if (!disabledFunctions.includes('upload'))
             this.addButtonToMenu('<i class="fa-solid fa-cloud-arrow-up"></i>', (e) => this.showUploadPanel()).setAttribute('title', 'Upload');
-        if (!(disabledFunctions.includes('download') && disabledFunctions.includes('upload') && disabledFunctions.includes('view'))) 
+        if (!(disabledFunctions.includes('download') && disabledFunctions.includes('upload') && disabledFunctions.includes('view')))
             this.addButtonToMenu();
 
-        if (!disabledFunctions.includes('zip')) 
+        if (!disabledFunctions.includes('zip'))
             this.addButtonToMenu('<i class="fa-solid fa-file-zipper"></i>', (e) => this.zipSelectedItems()).setAttribute('title', 'Zip');
-        if (!disabledFunctions.includes('unzip')) 
+        if (!disabledFunctions.includes('unzip'))
             this.addButtonToMenu('<i class="fa-solid fa-square-arrow-up-right"></i>', (e) => this.extractSelectedItems()).setAttribute('title', 'UnZip');
-        if (!(disabledFunctions.includes('unzip') && disabledFunctions.includes('zip'))) 
+        if (!(disabledFunctions.includes('unzip') && disabledFunctions.includes('zip')))
             this.addButtonToMenu();
 
-        if (!disabledFunctions.includes('toggleview')) 
+        if (!disabledFunctions.includes('toggleview'))
             this.addButtonToMenu('<i class="fa-solid fa-list-ul"></i>', (e) => this.toggleFilesListView()).setAttribute('title', 'Toggle View');
 
         if (!disabledFunctions.includes('search'))
             this.addInputToMenu('Search ...', (e) => { if (e.keyCode == 13) this.search(e.currentTarget.value); }, 'search-box');
 
-        if (disabledFunctions.includes('menubar')) 
+        if (disabledFunctions.includes('menubar'))
             menuContinerDiv.style.display = 'none';
     }
 
@@ -132,16 +132,16 @@
         let self = this;
         let menuItems = [];
 
-        if (!disabledFunctions.includes('browse')) 
+        if (!disabledFunctions.includes('browse'))
             menuItems.push({ text: '<i class="fa-solid fa-turn-up"></i> Up', onclick: function (e) { self.goUpFolder(); } });
-        if (!disabledFunctions.includes('reload')) 
+        if (!disabledFunctions.includes('reload'))
             menuItems.push({ text: '<i class="fa-solid fa-repeat"></i> Reload', onclick: function (e) { self.getFolderContent(); } });
-        if (!(disabledFunctions.includes('browse') && disabledFunctions.includes('reload'))) 
+        if (!(disabledFunctions.includes('browse') && disabledFunctions.includes('reload')))
             menuItems.push(null);
 
-        if (!disabledFunctions.includes('copy')) 
+        if (!disabledFunctions.includes('copy'))
             menuItems.push({ text: '<i class="fa-solid fa-copy"></i> Copy', onclick: function (e) { self.copyItems(); } });
-        if (!disabledFunctions.includes('cut')) 
+        if (!disabledFunctions.includes('cut'))
             menuItems.push({ text: '<i class="fa-solid fa-scissors"></i> Cut', onclick: function (e) { self.cutItems(); } });
         if (!(disabledFunctions.includes('copy') && disabledFunctions.includes('cut'))) {
             menuItems.push({ text: '<i class="fa-solid fa-paste"></i> Paste', onclick: function (e) { self.pasteItems(); }, disabled: true });
@@ -155,27 +155,27 @@
         if (!(disabledFunctions.includes('createnewfolder') && disabledFunctions.includes('createnewfile')))
             menuItems.push(null);
 
-        if (!disabledFunctions.includes('rename')) 
+        if (!disabledFunctions.includes('rename'))
             menuItems.push({ text: '<i class="fa-solid fa-i-cursor"></i> Rename', onclick: function (e) { self.renameSelectedItems(); } });
         if (!disabledFunctions.includes('getfilecontent'))
             menuItems.push({ text: '<i class="fa-solid fa-file-pen"></i> Edit', onclick: function (e) { self.getFileContent(); } });
-        if (!disabledFunctions.includes('delete')) 
+        if (!disabledFunctions.includes('delete'))
             menuItems.push({ text: '<i class="fa-solid fa-trash"></i> Delete', onclick: function (e) { self.deleteSelectedItems(); } });
-        if (!(disabledFunctions.includes('rename') && disabledFunctions.includes('getfilecontent') && disabledFunctions.includes('delete'))) 
+        if (!(disabledFunctions.includes('rename') && disabledFunctions.includes('getfilecontent') && disabledFunctions.includes('delete')))
             menuItems.push(null);
 
-        if (!disabledFunctions.includes('zip')) 
+        if (!disabledFunctions.includes('zip'))
             menuItems.push({ text: '<i class="fa-solid fa-file-zipper"></i> Zip', onclick: function (e) { self.zipSelectedItems(); } });
-        if (!disabledFunctions.includes('unzip')) 
+        if (!disabledFunctions.includes('unzip'))
             menuItems.push({ text: '<i class="fa-solid fa-square-arrow-up-right"></i> UnZip', onclick: function (e) { self.extractSelectedItems(); } });
-        if (!(disabledFunctions.includes('unzip') && disabledFunctions.includes('zip'))) 
+        if (!(disabledFunctions.includes('unzip') && disabledFunctions.includes('zip')))
             menuItems.push(null);
 
         if (!disabledFunctions.includes('view'))
             menuItems.push({ text: '<i class="fa-solid fa-eye"></i> View', onclick: function (e) { self.viewFile(); } });
-        if (!disabledFunctions.includes('download')) 
+        if (!disabledFunctions.includes('download'))
             menuItems.push({ text: '<i class="fa-solid fa-cloud-arrow-down"></i> Download', onclick: function (e) { self.downloadFile(); } });
-        if (!disabledFunctions.includes('upload')) 
+        if (!disabledFunctions.includes('upload'))
             menuItems.push({ text: '<i class="fa-solid fa-cloud-arrow-up"></i> Upload', onclick: function (e) { self.showUploadPanel(); } });
 
 
@@ -207,7 +207,7 @@
         this.jsSelectContinerDiv.classList.add('hgo-fm-fsitems');
         if (Cookies.get('hgo-fm-current-view-' + this.thisId))
             this.jsSelectContinerDiv.classList.add(Cookies.get('hgo-fm-current-view-' + this.thisId));
-        if (!disabledFunctions.includes('browse')) 
+        if (!disabledFunctions.includes('browse'))
             this.jsSelectContinerDiv.addEventListener('dblclick', (e) => {
                 e.stopPropagation();
                 this.goUpFolder();
@@ -245,7 +245,7 @@
                 "keep_selected_style": false
             },
             "plugins": []
-        }).on("select_node.jstree", (!disabledFunctions.includes('browse')) ? 
+        }).on("select_node.jstree", (!disabledFunctions.includes('browse')) ?
             function (evt, data) {
                 if (data.event.type === 'click') {
                     if (data.node.parent === "#") {
@@ -257,7 +257,7 @@
                         self.getFolderContent(self.getCurrentPath() + "\\" + data.node.text);
                     }
                 }
-            } 
+            }
             : null
         );
         this.jsTree = $(jsTreeDiv).jstree(true);
@@ -286,7 +286,7 @@
             for (const el of removed) {
                 el.classList.remove('selected');
             }
-            
+
         }).on('beforedrag', ({ store, event }) => {
             if (!event.ctrlKey && !event.metaKey) {
                 this.jsSelect.clearSelection();
@@ -386,10 +386,11 @@
                     self.getFolderContent(path);
                 });
 
+            let basePath = window.HGOFM_BASEPATH || '';
             let fsItemImg = document.createElement('img');
             fsItemImg.classList.add('lozad');
-            fsItemImg.src = '/hgofilemanager/images/loading.gif';
-            fsItemImg.setAttribute('data-src', '/hgofilemanager/images/folder.png');
+            fsItemImg.src = basePath + '/hgofilemanager/images/loading.gif';
+            fsItemImg.setAttribute('data-src', basePath + '/hgofilemanager/images/folder.png');
             fsItemDiv.appendChild(fsItemImg);
 
             let fsItemSpan = document.createElement('span');
@@ -407,19 +408,20 @@
             fsItemDiv.setAttribute('item-type', 'file');
             fsItemDiv.classList.add('fsitem');
 
-            if (!disabledFunctions.includes('view')) 
+            if (!disabledFunctions.includes('view'))
                 fsItemDiv.addEventListener('dblclick', (e) => {
                     e.stopPropagation();
                     self.viewFile();
                 });
 
+            let basePath = window.HGOFM_BASEPATH || '';
             let fsItemImg = document.createElement('img');
             fsItemImg.classList.add('lozad');
-            fsItemImg.src = '/hgofilemanager/images/loading.gif';
+            fsItemImg.src = basePath + '/hgofilemanager/images/loading.gif';
             if (!disabledFunctions.includes('filepreview')) {
                 fsItemImg.setAttribute('data-src', this.apiUrl + `?id=${this.thisId}&command=filePreview&parameters=${file.VirtualPath}`);
             } else {
-                fsItemImg.setAttribute('data-src', '/hgofilemanager/images/file.png');
+                fsItemImg.setAttribute('data-src', basePath + '/hgofilemanager/images/file.png');
             }
             fsItemDiv.appendChild(fsItemImg);
 
@@ -475,7 +477,7 @@
         return "";
     }
 
-    showToastify = function(text, type = 'error') {
+    showToastify = function (text, type = 'error') {
         let bgColor = 'linear-gradient(to right, #b6ff8a, #238f00);';
         if (type === 'error') {
             bgColor = "linear-gradient(to right, #ff8a8a, #ff6565)";
@@ -862,8 +864,8 @@
             parallelUploads: (typeof this.config.parallelUploads != "undefined" ? this.config.parallelUploads : 1),
             chunking: (typeof this.config.chunking != "undefined" ? this.config.chunking : true),
             chunkSize: (typeof this.config.chunkSizeByte != "undefined" ? this.config.chunkSizeByte : 10000000),  // bytes
-            retryChunks: (typeof this.config.retryChunks != "undefined" ? this.config.retryChunks : true),  
-            retryChunksLimit: (typeof this.config.retryChunksLimit != "undefined" ? this.config.retryChunksLimit : 3),  
+            retryChunks: (typeof this.config.retryChunks != "undefined" ? this.config.retryChunks : true),
+            retryChunksLimit: (typeof this.config.retryChunksLimit != "undefined" ? this.config.retryChunksLimit : 3),
             maxFilesize: (typeof this.config.maxFileSizeToUploadMByte != "undefined" ? this.config.maxFileSizeToUploadMByte : 256), // mega bytes
             acceptedFiles: (typeof this.config.acceptedFiles != "undefined" ? this.config.acceptedFiles : ''), //'.png,.pdf'
             paramName: 'file',
