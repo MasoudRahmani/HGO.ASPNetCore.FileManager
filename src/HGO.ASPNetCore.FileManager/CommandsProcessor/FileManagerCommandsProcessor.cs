@@ -612,14 +612,14 @@ public class FileManagerCommandsProcessor : IFileManagerCommandsProcessor
             };
         }
 
-        if (view)
-        {
-            return new FileStreamResult(File.OpenRead(physicalPath), Utils.GetMimeTypeForFileExtension(physicalPath));
-        }
+        //if (view)
+        //{
+        //    return new FileStreamResult(File.OpenRead(physicalPath), Utils.GetMimeTypeForFileExtension(physicalPath));
+        //}
 
         return new PhysicalFileResult(physicalPath, Utils.GetMimeTypeForFileExtension(physicalPath))
         {
-            FileDownloadName = Path.GetFileName(physicalPath),
+            FileDownloadName = view ? null : Path.GetFileName(physicalPath),
             EnableRangeProcessing = true
         };
     }
